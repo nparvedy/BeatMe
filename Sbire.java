@@ -2,7 +2,8 @@ public class Sbire extends CharacterGame implements Enemy{
     protected int givePointSkill;
     private String[] listSkill;
     private String questions[] = {"Combien font 1+1 ?"};
-    private String response[][] = { {"réponse 1", "réponse 2", "réponse 3"}, { "Réponse 4", "Réponse 5", "Réponse 6"} };
+    private String response[][] = { {"3", "2", "5"}, { "Réponse 4", "Réponse 5", "Réponse 6"} };
+    private int[] goodAnswer = {2};
 
     Sbire(String name, int hp, int mana){
          this.name = name;
@@ -29,6 +30,10 @@ public class Sbire extends CharacterGame implements Enemy{
 
     String[] getReponse(int nbQuestion){
         return this.response[nbQuestion];
+    }
+
+    int getGoodAnswer(int nbQuestion){
+        return this.goodAnswer[nbQuestion];
     }
 
 }

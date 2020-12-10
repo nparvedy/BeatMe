@@ -12,13 +12,15 @@ public class SystemGame {
     public int start(){
         if (this.statement.equals("start")){
             System.out.println("Vous êtes en game");
-            battle.battleFight();
 
-            String choice = sc.nextLine();
+            String choice = battle.battleFight(this.sc);
 
             if (choice.equals("menu")){
                 this.statement = "menu";
+            }else {
+                System.out.println(choice);
             }
+
         }else if (this.statement.equals("menu") || this.statement.equals("") || this.statement.equals("guide")){
             int response = menu.showMenu(this.sc, this.statement);
 
