@@ -3,5 +3,8 @@ public class CharacterGame {
     protected int hp;
     protected int mana;
 
+    int getHp(){
+        return this.hp;
+    }
 
 }

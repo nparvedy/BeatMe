@@ -17,7 +17,9 @@ public class SystemGame {
 
             if (choice.equals("menu")){
                 this.statement = "menu";
-            }else {
+            }else if (choice.equals("exit")){
+                return 1;
+            } else{
                 System.out.println(choice);
             }
 
