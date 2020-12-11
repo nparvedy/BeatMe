@@ -33,7 +33,7 @@ public class Battle {
                     return "exit";
                 }
 
-                System.out.println("Il a actuellement " + bossEnemy.sbires[i].getHp() + " points de vie");
+
                 String choice = sc.nextLine();
 
 
@@ -63,21 +63,29 @@ public class Battle {
 
             if (responseInt == bossEnemy.sbires[sbire].getGoodAnswer(0)){
                 bossEnemy.sbires[sbire].setHp(3);
+                if (bossEnemy.sbires[sbire].beat){
+                    return "Bravo ! Votre ennemi n'a plus de point de vie, vous avez gagné !";
+                }
                 return "Bravo ! Vous avez répondu juste !";
             }
         }
 
         hero.setHp(2);
+        if (hero.beat = false){
+            System.out.println("Il ne vous reste plus que : " + hero.getHp());
+        }
         return "Arf, vous vous êtes trompé !";
 
     }
 
     private int roundBattle(Boss boss, boolean bool, int sbire){
+
         if (!bool){
             if (boss.sbires[sbire].getHp() == 0){
                 return 1;
             }
-
+            System.out.println("Il a actuellement " + bossEnemy.sbires[sbire].getHp() + " points de vie");
+            System.out.println("Vous avez actuellement " + hero.getHp() + "point de vie");
             System.out.println(boss.sbires[sbire].getQuestion(0));
             System.out.println("Réponse 1 : " + boss.sbires[sbire].getReponse(0)[0]);
             System.out.println("Réponse 2 : " + boss.sbires[sbire].getReponse(0)[1]);

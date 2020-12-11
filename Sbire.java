@@ -23,7 +23,6 @@ public class Sbire extends CharacterGame implements Enemy{
         this.hp = this.hp - dmg;
         if (this.hp < 0){
             this.hp = 0;
-            System.out.println("Bravo ! Votre ennemi n'a plus de point de vie, vous avez gagné !");
             this.beat = true;
         }
     }
